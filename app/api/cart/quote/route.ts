@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const apiResponse = await fetch("http://localhost:4000/cart/quote", {
+    const apiResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"}/cart/quote`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

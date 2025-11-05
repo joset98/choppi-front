@@ -8,7 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 async function getStore(id: string): Promise<Store> {
   try {
-    const res = await fetch(`http://localhost:3000/api/stores/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_INTERNAL_API_URL || 'http://localhost:3000'}/api/stores/${id}`, {
       cache: "no-store",
     });
 

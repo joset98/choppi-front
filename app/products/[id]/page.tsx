@@ -6,7 +6,7 @@ import type { ProductWithStores } from "@/lib/types";
 import { ProductStoreCard } from "@/components/product-store-card";
 
 async function getProduct(id: string): Promise<ProductWithStores> {
-  const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_INTERNAL_API_URL || 'http://localhost:3000'}/api/products/${id}`, {
     cache: "no-store",
   });
 

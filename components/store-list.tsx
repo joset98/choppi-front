@@ -25,7 +25,7 @@ async function getStores(
   }
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"}/api/stores?${params}`,
+    `${process.env.NEXT_PUBLIC_INTERNAL_API_URL || 'http://localhost:3000'}/api/stores?${params}`,
     {
       cache: "no-store",
     },

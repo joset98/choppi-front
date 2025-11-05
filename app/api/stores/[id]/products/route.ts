@@ -11,7 +11,7 @@ export async function GET(
   const inStockOnly = searchParams.get("inStock");
 
   try {
-    const apiUrl = new URL(`http://localhost:4000/stores/${id}/products`);
+    const apiUrl = new URL(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"}/stores/${id}/products`);
     apiUrl.searchParams.set("page", page);
     apiUrl.searchParams.set("limit", limit);
     if (inStockOnly) apiUrl.searchParams.set("inStock", inStockOnly);
